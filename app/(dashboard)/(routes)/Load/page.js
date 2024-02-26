@@ -11,7 +11,7 @@ import { useUser } from '@clerk/nextjs';
 import {GenerateRandomString} from '../../../_utils/GenerateRandomString';
 import { useRouter } from 'next/navigation';
 
-function Load({UploadBtnClicked}) {
+function Load() {
   const router = useRouter();
   const {user} = useUser();
   const [progressbarvalue,setProgressBarvalue] = useState();
