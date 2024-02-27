@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { UserButton } from '@clerk/nextjs'
 import { Share, File, Shield } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-
+// Side nav component
 function SideNav() {
 
   const [ActiveBtn, setActiveBtn] = useState(0);
