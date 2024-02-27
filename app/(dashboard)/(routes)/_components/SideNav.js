@@ -1,18 +1,13 @@
 "use client"
 import React, { useState } from 'react'
 import { UserButton } from '@clerk/nextjs'
-import { Share, File, Shield } from 'lucide-react';
+import { Share, File, Shield, Router } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 // Side nav component
 function SideNav() {
 
   const [ActiveBtn, setActiveBtn] = useState(0);
-  const [path, setPath] = useState(); 
-  const navigateHandeler = () =>{
-    const router = useRouter();
-    router.push("/Files")
-    console.log("btn clicked");
-  }
+  const router = useRouter()
   const menuItem = [
     {
       id: 1,
@@ -30,7 +25,7 @@ function SideNav() {
       id: 3,
       name : 'Upgrade',
       icon: Shield,
-      path: '/Upgrade'
+      path: '/Upgrad_e'
     },
   ]
 
@@ -44,8 +39,7 @@ function SideNav() {
         {menuItem.map((item,index)=>(
           <button className={`w-full flex gap-2 h-20  items-center float-start hover:bg-gray-100 px-6 ${ActiveBtn == index ? 'text-main bg-blue-50':null}`}
           onClick={()=>{setActiveBtn(index);
-            setPath(item.path);
-           navigateHandeler;}}
+            router.push(menuItem[index].path)}}
            >
             <item.icon/>
             <h2>{item.name}</h2>
