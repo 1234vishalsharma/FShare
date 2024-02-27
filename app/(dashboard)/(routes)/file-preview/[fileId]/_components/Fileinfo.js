@@ -9,6 +9,9 @@ const Fileinfo = ({file, OnPasswordSaved}) => {
   const handleChange = (event) => {
     setPassword(event.target.value)  
   }
+  const copyHandeler = () =>{
+    navigator.clipboard.writeText(file?.ShortUrl);
+  }
  
 
   return (
@@ -23,7 +26,7 @@ const Fileinfo = ({file, OnPasswordSaved}) => {
           className="mt-1 w-5/6 shadow-sm sm:text-md p-4"
         />
         
-        <CopyIcon size={32} className='flex justify-center items-center h-full ml-4'/>
+        <CopyIcon onClick={copyHandeler} size={32} className='flex justify-center items-center h-full ml-4 cursor-pointer'/>
       </div>
     
 
