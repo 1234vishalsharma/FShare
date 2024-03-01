@@ -1,13 +1,18 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { UserButton } from '@clerk/nextjs'
 import { Share, File, Shield, Router } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 // Side nav component
 function SideNav() {
 
+  
   const [ActiveBtn, setActiveBtn] = useState(0);
   const router = useRouter()
+  
+    useEffect(()=>{
+      router.push('/Load')
+    }, [] )
   const menuItem = [
     {
       id: 1,
