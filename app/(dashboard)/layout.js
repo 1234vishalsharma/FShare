@@ -7,10 +7,10 @@ function layout({children}) {
       <div className='flex'>
         <div className='h-screen w-56 fixed'>
             <SideNav></SideNav>
-        </div>
-        <div className='ml-56 h-20 w-screen max-md:ml-0'>
-            <TopHeader></TopHeader>
-            {children}
+        </div>  
+          <div className='ml-56 h-20 w-screen max-md:ml-0'>
+              <TopHeader></TopHeader>
+              {children}
         </div>
     </div>
   )
